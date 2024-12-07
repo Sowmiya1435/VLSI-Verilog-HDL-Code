@@ -23,9 +23,9 @@ full_adder fa4(a[3],b[3],cin[3],s[3],c[3]);
 assign sum[0]=s[0];
 wire c1,c2,c3;
 
-full_adder fa5(c[0],s[1],cin[0],sum[0],c1);
-full_adder fa6(c[1],s[2],cin[1],sum[1],c2);
-full_adder fa7(c[2],s[3],cin[2],sum[2],c3);
-full_adder fa8(c[3],1'b0,cin[3],sum[3],cout);
+    full_adder fa5(c[0],s[1],1'b0,sum[0],c1);
+    full_adder fa6(c[1],s[2],c1,sum[1],c2);
+    full_adder fa7(c[2],s[3],c2,sum[2],c3);
+    full_adder fa8(c[3],1'b0,c3,sum[3],cout);
 
 endmodule
